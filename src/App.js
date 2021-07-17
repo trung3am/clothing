@@ -5,8 +5,10 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component'
 import { createStructuredSelector } from 'reselect';
-import './App.css';
 import Header from './components/header/header.component';
+
+import { GlobalStyle } from './global.styles';
+
 import {checkUserSession} from './redux/user/user.action';
 
 import { connect } from 'react-redux';
@@ -23,6 +25,7 @@ const App = ({checkUserSession,currentUser})=> {
 
   return (
     <div>
+      <GlobalStyle/>
       <Header />
       <Switch>
       <Route exact path='/' component={Homepage}/>  
